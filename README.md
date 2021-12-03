@@ -62,7 +62,7 @@ Under "SPONSORS ADD INFO HERE" heading below, include the following:
 - $23,750 USDC main award pot
 - $1,250 USDC gas optimization award pot
 - Join [C4 Discord](https://discord.gg/code4rena) to register
-- Submit findings [using the C4 form](https://code4rena.com/contests/2021-12-pooltogether-contest/submit)
+- Submit findings [using the C4 form](https://code4rena.com/contests/2021-12-pooltogether-twabrewards-contest/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
 - Starts December 9, 2021 00:00 UTC
 - Ends December 12, 2021 23:59 UTC
