@@ -75,9 +75,9 @@ Under "SPONSORS ADD INFO HERE" heading below, include the following:
 
 ---
 
-# PoolTogether contest details
-- TBD main award pot
-- TBD gas optimization award pot
+# PoolTogether TwabRewards contest details
+- $23,750 USDC main award pot
+- $1,250 USDC gas optimization award pot
 - Join [C4 Discord](https://discord.gg/code4rena) to register
 - Submit findings [using the C4 form](https://code4rena.com/contests/2021-12-pooltogether-contest/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
