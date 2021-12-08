@@ -32,7 +32,7 @@ Representatives from PoolTogether will be available in the Code4rena Discord to 
 | Contract | Source Lines of Code | External Calls | Libraries |
 |:------   |:------        |:------         |:------    |
 | [ITwabRewards.sol](https://github.com/pooltogether/v4-periphery/blob/ceadb25844f95f19f33cb856222e461ed8edf005/contracts/interfaces/ITwabRewards.sol) | ~121 | None | OpenZeppelin IERC20 |
-| [TwabRewards.sol](https://github.com/pooltogether/v4-periphery/blob/ceadb25844f95f19f33cb856222e461ed8edf005/contracts/TwabRewards.sol) | ~376 |  [Ticket](https://github.com/pooltogether/v4-core/blob/b63fb05391ee1c2b141c0340130cd347080808e1/contracts/Ticket.sol) <br/> ERC20 token | OpenZeppelin SafeERC20 |
+| [TwabRewards.sol](https://github.com/pooltogether/v4-periphery/blob/b520faea26bcf60371012f6cb246aa149abd3c7d/contracts/TwabRewards.sol) | ~378 |  [Ticket](https://github.com/pooltogether/v4-core/blob/b63fb05391ee1c2b141c0340130cd347080808e1/contracts/Ticket.sol) <br/> ERC20 token | OpenZeppelin SafeERC20 |
 
 ### Risks
 - ability for a user to claim more rewards beyond their eligibility
