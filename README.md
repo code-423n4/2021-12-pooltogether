@@ -1,62 +1,6 @@
-# ✨ So you want to sponsor a contest
-
-This `README.md` contains a set of checklists for our contest collaboration.
-
-Your contest will use two repos: 
-- **a _contest_ repo** (this one), which is used for scoping your contest and for providing information to contestants (wardens)
-- **a _findings_ repo**, where issues are submitted. 
-
-Ultimately, when we launch the contest, this contest repo will be made public and will contain the smart contracts to be reviewed and all the information needed for contest participants. The findings repo will be made public after the contest is over and your team has mitigated the identified issues.
-
-Some of the checklists in this doc are for **C4 (🐺)** and some of them are for **you as the contest sponsor (⭐️)**.
-
----
-
-# Contest setup
-
-## ⭐️ Sponsor: Provide contest details
-
-Under "SPONSORS ADD INFO HERE" heading below, include the following:
-
-- [ ] Name of each contract and:
-  - [ ] lines of code in each
-  - [ ] external contracts called in each
-  - [ ] libraries used in each
-- [ ] Describe any novel or unique curve logic or mathematical models implemented in the contracts
-- [ ] Does the token conform to the ERC-20 standard? In what specific ways does it differ?
-- [ ] Describe anything else that adds any special logic that makes your approach unique
-- [ ] Identify any areas of specific concern in reviewing the code
-- [ ] Add all of the code to this repo that you want reviewed
-- [ ] Create a PR to this repo with the above changes.
-
----
-
-# ⭐️ Sponsor: Provide marketing details
-
-- [ ] Your logo (URL or add file to this repo - SVG or other vector format preferred)
-- [ ] Your primary Twitter handle
-- [ ] Any other Twitter handles we can/should tag in (e.g. organizers' personal accounts, etc.)
-- [ ] Your Discord URI
-- [ ] Your website
-- [ ] Optional: Do you have any quirks, recurring themes, iconic tweets, community "secret handshake" stuff we could work in? How do your people recognize each other, for example? 
-- [ ] Optional: your logo in Discord emoji format
-
----
-
-# Contest prep
-
-## ⭐️ Sponsor: Contest prep
-- [ ] Make sure your code is thoroughly commented using the [NatSpec format](https://docs.soliditylang.org/en/v0.5.10/natspec-format.html#natspec-format).
-- [ ] Modify the bottom of this `README.md` file to describe how your code is supposed to work with links to any relevent documentation and any other criteria/details that the C4 Wardens should keep in mind when reviewing. ([Here's a well-constructed example.](https://github.com/code-423n4/2021-06-gro/blob/main/README.md))
-- [ ] Please have final versions of contracts and documentation added/updated in this repo **no less than 8 hours prior to contest start time.**
-- [ ] Ensure that you have access to the _findings_ repo where issues will be submitted.
-- [ ] Promote the contest on Twitter (optional: tag in relevant protocols, etc.)
-- [ ] Share it with your own communities (blog, Discord, Telegram, email newsletters, etc.)
-- [ ] Optional: pre-record a high-level overview of your protocol (not just specific smart contract functions). This saves wardens a lot of time wading through documentation.
-- [ ] Designate someone (or a team of people) to monitor DMs & questions in the C4 Discord (**#questions** channel) daily (Note: please *don't* discuss issues submitted by wardens in an open channel, as this could give hints to other wardens.)
-- [ ] Delete this checklist and all text above the line below when you're ready.
-
----
+<p align="left">
+  <img src="images/pooltogether-logo--purple-gradient.png" alt="PoolTogether Brand" style="max-width:100%;" width="200px">
+</p>
 
 # PoolTogether TwabRewards contest details
 - $23,750 USDC main award pot
@@ -67,6 +11,41 @@ Under "SPONSORS ADD INFO HERE" heading below, include the following:
 - Starts December 9, 2021 00:00 UTC
 - Ends December 12, 2021 23:59 UTC
 
-This repo will be made public before the start of the contest. (C4 delete this line when made public)
+## Contest Scope
 
-[ ⭐️ SPONSORS ADD INFO HERE ]
+The focus of this contest is the TWAB Reward contract that will distribute rewards to depositors in the PoolTogether V4 prize pools.
+
+Compared to a traditional staking contract where users need to deposit tokens in order to receive rewards, PoolTogether users will only need to hold V4 prize pool tickets in order to be eligible to claim rewards.
+
+This is made possible thanks to the [TWAB (Time-Weighted Average Balance)](https://v4.docs.pooltogether.com/protocol/concepts/time-weight-average-balance) concept introduced in V4. For an overview of V4, wardens can consult the [V4 Documentation](https://v4.docs.pooltogether.com/).
+
+Wardens should focus on this mechanism and search for mathematical or logic errors that would allow a malicious actor to claim more rewards than they are eligible for.
+
+This contract also supports the creation of several promotions, otherwise known as rewards campaigns. Promotions run simultaneously and distribute different types of ERC20 tokens. A promotion runs for several epochs of a fixed time duration.
+
+Rewards are calculated based on the average amount of tickets a user holds during the epoch duration. A user should only be able to claim rewards from epochs that are already over and he should only be able to claim these once.
+
+Representatives from PoolTogether will be available in the Code Arena Discord to answer any questions during the contest period.
+
+## Areas of Concern
+
+| Contract | Source Lines of Code | External Calls | Libraries |
+|:------   |:------        |:------         |:------    |
+| [ITwabRewards.sol](https://github.com/pooltogether/v4-periphery/blob/ceadb25844f95f19f33cb856222e461ed8edf005/contracts/interfaces/ITwabRewards.sol) | ~121 | None | OpenZeppelin IERC20 |
+| [TwabRewards.sol](https://github.com/pooltogether/v4-periphery/blob/ceadb25844f95f19f33cb856222e461ed8edf005/contracts/TwabRewards.sol) | ~376 |  [Ticket](https://github.com/pooltogether/v4-core/blob/b63fb05391ee1c2b141c0340130cd347080808e1/contracts/Ticket.sol) <br/> ERC20 token | OpenZeppelin SafeERC20 |
+
+### Risks
+- ability for a user to claim more rewards beyond their eligibility
+- potential loss of funds when creating, extending or cancelling a promotion
+- potential exploitation of the infinite approval given to the contract to spend rewards token when users are claiming their rewards
+
+## Links
+
+- [Website](https://pooltogether.com)
+- [V4 Prize Pool](https://v4.pooltogether.com/)
+- [V4 Documentation](https://v4.docs.pooltogether.com/)
+- [TWAB (Time-Weighted Average Balance) Documentation](https://v4.docs.pooltogether.com/protocol/concepts/time-weight-average-balance)
+- [Discord](https://pooltogether.com/discord/)
+- [Twitter](https://twitter.com/PoolTogether_)
+- [Medium](https://medium.com/pooltogether)
+- [Github](https://github.com/pooltogether)
