@@ -25,7 +25,7 @@ This contract also supports the creation of several promotions, otherwise known 
 
 Rewards are calculated based on the average amount of tickets a user holds during the epoch duration. A user should only be able to claim rewards from epochs that are already over and he should only be able to claim these once.
 
-Representatives from PoolTogether will be available in the Code Arena Discord to answer any questions during the contest period.
+Representatives from PoolTogether will be available in the Code4rena Discord to answer any questions during the contest period.
 
 ## Areas of Concern
 
