@@ -37,7 +37,6 @@ Representatives from PoolTogether will be available in the Code4rena Discord to 
 ### Risks
 - ability for a user to claim more rewards beyond their eligibility
 - potential loss of funds when creating, extending or cancelling a promotion
-- potential exploitation of the infinite approval given to the contract to spend rewards token when users are claiming their rewards
 
 ## Links
 
