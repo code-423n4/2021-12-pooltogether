@@ -3,7 +3,7 @@
 </p>
 
 # PoolTogether TwabRewards contest details
-- $23,750 USDC main award pot
+- $18,750 USDC main award pot
 - $1,250 USDC gas optimization award pot
 - Join [C4 Discord](https://discord.gg/code4rena) to register
 - Submit findings [using the C4 form](https://code4rena.com/contests/2021-12-pooltogether-twabrewards-contest/submit)
